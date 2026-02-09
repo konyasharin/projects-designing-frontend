@@ -13,6 +13,6 @@ export const config = {
   ],
 };
 
-export function middleware() {
+export function proxy() {
   return NextResponse.next();
 }

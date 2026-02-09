@@ -1,4 +1,7 @@
+'use client';
+
 import { FC, ReactNode } from 'react';
+import { SessionProvider } from 'next-auth/react';
 import { Locale, NextIntlClientProvider, useMessages } from 'next-intl';
 
 interface ProvidersProps {
@@ -11,8 +14,8 @@ interface ProvidersProps {
 
 export const Providers: FC<ProvidersProps> = props => {
   return (
-    <NextIntlClientProvider {...props.i18n}>
-      {props.children}
+    <NextIntlClientProvider timeZone={'Europe/Vienna'} {...props.i18n}>
+      <SessionProvider>{props.children}</SessionProvider>
     </NextIntlClientProvider>
   );
 };

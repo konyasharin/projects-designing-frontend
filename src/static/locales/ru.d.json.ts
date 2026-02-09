@@ -14,6 +14,9 @@ declare const messages: {
     SETTING: 'Настройки';
     EXIT: 'Выход';
   };
+  NOT_FOUND: {
+    TITLE: 'Страница не найдена';
+  };
   COMMON: {
     TITLE: 'PJD';
   };
