@@ -10,5 +10,12 @@ declare const messages: {
     SIGN_IN_WITH: 'Войти через {serviceName}';
     SIGN_IN_SUCCESSFULLY: 'Вы успешно вошли в аккаунт';
   };
+  HEADER: {
+    SETTING: 'Настройки';
+    EXIT: 'Выход';
+  };
+  COMMON: {
+    TITLE: 'PJD';
+  };
 };
 export default messages;
