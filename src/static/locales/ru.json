@@ -1,0 +1,10 @@
+{
+  "AUTH": {
+    "SIGN_IN": "Вход",
+    "SIGN_UP": "Регистрация",
+    "SIGN_UP_NEW_ACCOUNT": "Зарегистрировать новый аккаунт",
+    "SIGN_UP_WITH": "Зарегистрироваться через {serviceName}",
+    "SIGN_IN_WITH": "Войти через {serviceName}",
+    "SIGN_IN_SUCCESSFULLY": "Вы успешно вошли в аккаунт"
+  }
+}
