@@ -13,7 +13,7 @@ interface LayoutProps {
   children?: ReactNode;
 }
 
-export const Layout: FC<LayoutProps> = async props => {
+export const Layout: FC<LayoutProps> = props => {
   return (
     <>
       <Header>

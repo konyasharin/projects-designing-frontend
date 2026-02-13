@@ -1,20 +1,19 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+
+import { auth } from '@/modules/auth';
 
 import { HeaderMenu } from './header-menu';
 
 import { APP_PATHS } from '@/shared/constants';
-import { Button, Skeleton } from '@/shared/shadcn';
+import { Button } from '@/shared/shadcn';
 
-export const HeaderAuth: FC = () => {
-  const t = useTranslations();
-  const TEST_IS_AUTH = false;
-  const TEST_IS_AUTH_LOADING = false;
+export const HeaderAuth: FC = async () => {
+  const t = await getTranslations();
+  const session = await auth();
 
-  if (TEST_IS_AUTH_LOADING) return <Skeleton className={'h-8 w-8'} />;
-
-  if (TEST_IS_AUTH) return <HeaderMenu />;
+  if (session?.user) return <HeaderMenu />;
 
   return (
     <Link href={APP_PATHS.SIGN_IN}>
