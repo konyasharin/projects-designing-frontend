@@ -6,6 +6,8 @@ import { IoExitOutline } from 'react-icons/io5';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
+import { signOut } from '@/modules/auth/server';
+
 import { APP_PATHS } from '@/shared/constants';
 import { MenuItem, Typography } from '@/shared/ui';
 
@@ -19,7 +21,10 @@ export const HeaderMenuItems: FC = () => {
         <Typography>{t('SETTING')}</Typography>
         <CiSettings size={24} />
       </MenuItem>
-      <MenuItem className={'hover:text-red-500 transition'}>
+      <MenuItem
+        className={'hover:text-red-500 transition'}
+        onClick={() => signOut()}
+      >
         <Typography>{t('EXIT')}</Typography>
         <IoExitOutline size={24} />
       </MenuItem>

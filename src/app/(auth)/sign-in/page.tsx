@@ -1,9 +1,8 @@
 import { useTranslations } from 'next-intl';
 
-import { signIn } from '@/modules/auth';
+import { GoogleOauthButton } from '@/modules/auth';
 
 import {
-  Button,
   Card,
   CardDescription,
   CardFooter,
@@ -23,16 +22,7 @@ export default function SignIn() {
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex-col gap-2">
-        <form
-          action={async () => {
-            'use server';
-            await signIn('google');
-          }}
-        >
-          <Button type={'submit'}>
-            {t('SIGN_IN_WITH', { serviceName: 'Google' })}
-          </Button>
-        </form>
+        <GoogleOauthButton />
       </CardFooter>
     </Card>
   );

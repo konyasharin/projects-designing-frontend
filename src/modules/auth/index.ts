@@ -1,2 +1,2 @@
-export { Avatar } from './ui';
-export { auth, handlers, signIn, signOut } from './utils';
+export { Avatar, GoogleOauthButton } from './ui';
+export { auth, handlers } from './utils';
