@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 export const config = {
   matcher: [
     /*
@@ -13,6 +11,4 @@ export const config = {
   ],
 };
 
-export function proxy() {
-  return NextResponse.next();
-}
+export { auth as proxy } from '@/modules/auth';

@@ -1,1 +1,1 @@
-export { AUTH_OPTIONS } from './constants';
+export { auth, handlers, signIn, signOut } from './utils';

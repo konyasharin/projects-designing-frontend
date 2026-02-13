@@ -1,14 +1,10 @@
-'use client';
-
-import Link from 'next/link';
-import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
-import { APP_PATHS } from '@/shared/constants';
+import { signIn } from '@/modules/auth';
+
 import {
   Button,
   Card,
-  CardAction,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -17,7 +13,6 @@ import {
 
 export default function SignIn() {
   const t = useTranslations('AUTH');
-  // const session = useSession();
 
   return (
     <Card className={'w-full'}>
@@ -26,16 +21,18 @@ export default function SignIn() {
         <CardDescription>
           {t('SIGN_IN_WITH', { serviceName: 'Google' })}
         </CardDescription>
-        <CardAction>
-          <Link href={APP_PATHS.SIGN_UP}>
-            <Button variant="link">{t('SIGN_UP')}</Button>
-          </Link>
-        </CardAction>
       </CardHeader>
       <CardFooter className="flex-col gap-2">
-        <Button onClick={() => signIn('google')}>
-          {t('SIGN_IN_WITH', { serviceName: 'Google' })}
-        </Button>
+        <form
+          action={async () => {
+            'use server';
+            await signIn('google');
+          }}
+        >
+          <Button type={'submit'}>
+            {t('SIGN_IN_WITH', { serviceName: 'Google' })}
+          </Button>
+        </form>
       </CardFooter>
     </Card>
   );
