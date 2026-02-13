@@ -8,6 +8,16 @@ export const AUTH_OPTIONS: AuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    async jwt({ token, account }) {
+      if (account) {
+        console.log(account);
+        token.googleAccessToken = account.access_token;
+        token.googleIdToken = account.id_token;
+      }
+      return token;
+    },
+  },
   session: {
     strategy: 'jwt',
   },

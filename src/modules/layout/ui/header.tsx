@@ -1,6 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react';
-
-import { HeaderGroup } from './header-group';
+import { FC, ReactNode } from 'react';
 
 import { Container } from '@/shared/ui';
 
@@ -8,11 +6,7 @@ interface HeaderProps {
   children?: ReactNode;
 }
 
-type Header = FC<HeaderProps> & {
-  Group: FC<ComponentProps<typeof HeaderGroup>>;
-};
-
-const Header: Header = props => {
+export const Header: FC<HeaderProps> = props => {
   return (
     <div
       className={
@@ -29,7 +23,3 @@ const Header: Header = props => {
     </div>
   );
 };
-
-Header.Group = HeaderGroup;
-
-export { Header };

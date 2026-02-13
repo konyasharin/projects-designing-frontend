@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { DynamicLayout } from './dynamic-layout';
 import { Header } from './header';
 import { HeaderAuth } from './header-auth';
+import { HeaderGroup } from './header-group';
 
 import { APP_PATHS } from '@/shared/constants';
 import { Container, Logo } from '@/shared/ui';
@@ -16,14 +17,14 @@ export const Layout: FC<LayoutProps> = async props => {
   return (
     <>
       <Header>
-        <Header.Group>
+        <HeaderGroup>
           <Link href={APP_PATHS.MAIN}>
             <Logo />
           </Link>
-        </Header.Group>
-        <Header.Group>
+        </HeaderGroup>
+        <HeaderGroup>
           <HeaderAuth />
-        </Header.Group>
+        </HeaderGroup>
       </Header>
       <Container className={'pt-32'}>{props.children}</Container>
       <DynamicLayout />

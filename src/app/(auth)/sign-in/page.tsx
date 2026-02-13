@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
 import { APP_PATHS } from '@/shared/constants';
@@ -17,10 +17,7 @@ import {
 
 export default function SignIn() {
   const t = useTranslations('AUTH');
-  const session = useSession();
-  if (session) {
-    console.log(session);
-  }
+  // const session = useSession();
 
   return (
     <Card className={'w-full'}>

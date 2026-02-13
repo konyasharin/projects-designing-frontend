@@ -8,7 +8,13 @@ import { useTranslations } from 'next-intl';
 
 import { APP_PATHS } from '@/shared/constants';
 import { Avatar } from '@/shared/shadcn';
-import { Menu, Typography } from '@/shared/ui';
+import {
+  Menu,
+  MenuDropdown,
+  MenuItem,
+  MenuTarget,
+  Typography,
+} from '@/shared/ui';
 
 export const HeaderMenu: FC = () => {
   const router = useRouter();
@@ -16,19 +22,19 @@ export const HeaderMenu: FC = () => {
 
   return (
     <Menu>
-      <Menu.Target>
+      <MenuTarget>
         <Avatar />
-      </Menu.Target>
-      <Menu.Dropdown>
-        <Menu.Item onClick={() => router.push(APP_PATHS.SETTINGS)}>
+      </MenuTarget>
+      <MenuDropdown>
+        <MenuItem onClick={() => router.push(APP_PATHS.SETTINGS)}>
           <Typography>{t('SETTING')}</Typography>
           <CiSettings size={24} />
-        </Menu.Item>
-        <Menu.Item className={'hover:text-red-500 transition'}>
+        </MenuItem>
+        <MenuItem className={'hover:text-red-500 transition'}>
           <Typography>{t('EXIT')}</Typography>
           <IoExitOutline size={24} />
-        </Menu.Item>
-      </Menu.Dropdown>
+        </MenuItem>
+      </MenuDropdown>
     </Menu>
   );
 };
