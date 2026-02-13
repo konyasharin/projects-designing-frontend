@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC, MouseEventHandler, ReactNode } from 'react';
 import { clsx } from 'clsx';
 
 interface MenuItemProps {
   children?: ReactNode;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLDivElement>;
   className?: string;
 }
 

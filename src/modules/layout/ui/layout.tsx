@@ -1,12 +1,13 @@
 import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 
+import { APP_PATHS } from '@/modules/routing';
+
 import { DynamicLayout } from './dynamic-layout';
 import { Header } from './header';
 import { HeaderAuth } from './header-auth';
 import { HeaderGroup } from './header-group';
 
-import { APP_PATHS } from '@/shared/constants';
 import { Container, Logo } from '@/shared/ui';
 
 interface LayoutProps {

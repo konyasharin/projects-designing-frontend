@@ -7,8 +7,8 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { signOut } from '@/modules/auth/server';
+import { APP_PATHS } from '@/modules/routing';
 
-import { APP_PATHS } from '@/shared/constants';
 import { MenuItem, Typography } from '@/shared/ui';
 
 export const HeaderMenuItems: FC = () => {
@@ -23,7 +23,7 @@ export const HeaderMenuItems: FC = () => {
       </MenuItem>
       <MenuItem
         className={'hover:text-red-500 transition'}
-        onClick={() => signOut()}
+        onClick={() => signOut()} // Без стрелочной функции нельзя, иначе в signOut пройдет event
       >
         <Typography>{t('EXIT')}</Typography>
         <IoExitOutline size={24} />

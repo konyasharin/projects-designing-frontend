@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
 import { auth } from '@/modules/auth';
+import { APP_PATHS } from '@/modules/routing';
 
 import { HeaderMenu } from './header-menu';
 
-import { APP_PATHS } from '@/shared/constants';
 import { Button } from '@/shared/shadcn';
 
 export const HeaderAuth: FC = async () => {

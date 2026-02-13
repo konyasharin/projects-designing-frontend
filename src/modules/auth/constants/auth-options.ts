@@ -2,7 +2,8 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import { NextAuthConfig } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-import { APP_PATHS } from '@/shared/constants';
+import { APP_PATHS } from '@/modules/routing';
+
 import { prisma } from '@/shared/prisma/server';
 
 export const AUTH_OPTIONS: NextAuthConfig = {
